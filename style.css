@@ -6,17 +6,31 @@
 body{
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-    background:linear-gradient(90deg,gray , black ) ;
+    background: darkcyan;
     color: white;
+    transition: all 100ms ease-out;
+}
+input:focus{
+    outline: none;
 }
 .container{
-    width: 300px;
-    max-width: 100%;
-    margin-inline: auto;
+    width: min(375px, 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(21, 20, 20);
+    border-radius: 3.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(191, 189, 189, 0.275);
+    overflow: hidden;
+}
+@media screen and (max-width: 375px) {
+    .container{
+        height: 100vh;
+        border-radius: 0;
+    }
 }
 .input-section{
     width: 100%;
@@ -25,14 +39,44 @@ body{
 }
 .input-section input{
     text-align: right;
+    font-size: 1.5rem;
+    color: white;
     padding:.25rem .8rem;
+    border: none;
+    background-color: transparent;
+    margin-bottom: .75rem;
+}
+.input-section input:first-child{
+    font-size: 3rem;
 }
 .buttons{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    border: 1px solid red;;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: center;
+    gap: 1rem;
+    padding: .5rem;
 }
 .buttons input{
-
+    font-size: 1.75rem;
+    text-align: center;
+    border: none;
+    /* width: 70px; */
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: rgb(255, 179, 0);
+    color: white;
+    cursor: pointer;
+}
+#zero{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-radius: 3.5rem;
+    aspect-ratio: unset;
+}
+.buttons .numbers{
+    background-color: rgb(63, 62, 62);
+}
+.buttons .gray{
+    background-color: rgb(156, 155, 155);
 }
